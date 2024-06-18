@@ -8,7 +8,7 @@ You can download the text data [here](https://pan.quark.cn/s/dfca05fd6e96).
 ## Testing
 ```
 cd scripts
-bash main_eval.sh coco2014_distill rn50_coco2014 experiment_1
+bash main_eval.sh coco2014_distill rn50_coco2014 coco
 ```
 
 ## Training
