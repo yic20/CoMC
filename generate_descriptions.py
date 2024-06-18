@@ -3,7 +3,7 @@ from openai import OpenAI
 import json
 
 client = OpenAI(
-    base_url='https://api.openai-proxy.org/v1',
+    base_url='https://api.openai-proxy.org',
     api_key='YOUR_OPENAI_API_KEY',
 )
 
@@ -30,7 +30,7 @@ def generate_description(labels):
     max_tokens=40,
     model="gpt-3.5-turbo", 
 )
-    ###  use gpt3-davinci-002 (used in orignial paper)
+    ###  use gpt3-davinci-002 (used in original paper)
     # response = client.completions.create(       
     #     model="text-davinci-002",
     #     prompt=prompt,
