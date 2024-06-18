@@ -3,6 +3,8 @@
 
 ## Get started
 The code is based on [Dassl](https://github.com/KaiyangZhou/Dassl.pytorch), please follow the instructions in [Dassl](https://github.com/KaiyangZhou/Dassl.pytorch) to install.
+
+You can download the text data [here](https://pan.quark.cn/s/dfca05fd6e96).
 ## Testing
 ```
 cd scripts
