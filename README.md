@@ -1,6 +1,8 @@
 [ICML2024] Language-Driven Cross-Modal Classifier for Zero-Shot Multi-Label Image Recognition
 ===
 
+## Get started
+The code is based on [Dassl](https://github.com/KaiyangZhou/Dassl.pytorch), please follow the instructions in [Dassl](https://github.com/KaiyangZhou/Dassl.pytorch) to install.
 ## Testing
 ```
 cd scripts
