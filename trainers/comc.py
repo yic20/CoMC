@@ -161,17 +161,17 @@ class CustomCLIP(nn.Module):
             
             sim = image_feature_@text_features.T.float()
             sim = (sim*100).softmax(dim=-1)
-            prefix_embedding = sim@text_features.float()
-            prefix_embedding /= prefix_embedding.norm(dim=-1,keepdim=True)
-            mapping_embedding = 0.7*image_feature_+0.3*prefix_embedding   
-            logits_ = self.classifier(mapping_embedding)
+            mapped_embedding = sim@text_features.float()
+            mapped_embedding /= mapped_embedding.norm(dim=-1,keepdim=True)
+            fused_embedding = 0.7*image_feature_+0.3*mapped_embedding   
+            logits_ = self.classifier(fused_embedding)
             
             sim_local = image_features@text_features.T.float()
             sim_local = (sim_local*100).softmax(dim=-1)
-            prefix_embedding_l = sim_local@text_features.float()
-            prefix_embedding_l /= prefix_embedding_l.norm(dim=-1, keepdim=True)
-            mapping_embedding_l = 0.7*image_features+0.3*prefix_embedding_l
-            logits_local = self.classifier(mapping_embedding_l)
+            mapped_embedding_l = sim_local@text_features.float()
+            mapped_embedding_l /= mapped_embedding_l.norm(dim=-1, keepdim=True)
+            fused_embedding_l = 0.7*image_features+0.3*mapped_embedding_l
+            logits_local = self.classifier(fused_embedding_l)
             
             logits_local = torch.max(logits_local, dim = 0).values
             return logits_, logits_local
