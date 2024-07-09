@@ -247,7 +247,7 @@ class comc(TrainerX):
 
         print("Building custom CLIP")
         # self.model = CustomCLIP(cfg, classnames, clip_model)
-        self.text_templates = torch.load('/disk1/lyc/TaI-DPT/suppl/coco_templates.pt', map_location='cuda:0')
+        self.text_templates = torch.load('/disk1/lyc/CoMC/suppl/coco_templates.pt', map_location='cuda:0')
         self.model = CustomCLIP(cfg, classnames, clip_model, text_templates=self.text_templates)
 
         print("Turning off gradients in both the image and the text encoder")
